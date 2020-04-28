@@ -44,3 +44,13 @@ def datos_edit(request, pk):
     else:
         form = DatosForm(instance=post)
     return render(request, 'blog/datos_edit.html', {'form': form})
+
+def datos_delete(request, pk):
+    post = get_object_or_404(DatosB, pk=pk)
+    post = DatosB.objects.get(pk=pk)
+    if request.method == "POST":
+        post.delete()
+        return redirect('datos_list')
+    else:
+        form = DatosForm(instance=post)
+    return render(request, 'blog/datos_delete.html', {'post': post})
