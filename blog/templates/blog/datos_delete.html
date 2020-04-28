@@ -4,7 +4,7 @@
 
 <form method="post">
     {% csrf_token %}
-    <h3>¿Desea eliminar el registro de {{ post.title }}?</h3>
+    <h3>¿Desea eliminar el registro de {{ post.title }} ?</h3>
     <button type="submit" class="btn btn-danger">Eliminar</button>
     <a class="btn btn-default" href="/">Cancelar</a>
 </form>
